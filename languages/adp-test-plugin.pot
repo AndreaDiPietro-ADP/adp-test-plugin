@@ -1,0 +1,157 @@
+# Copyright (C) 2020 Andrea Di Pietro
+# This file is distributed under the same license as the ADP Test Plugin plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: ADP Test Plugin 0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/adp-test-plugin\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-02-02T21:09:26+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: adp-test-plugin\n"
+
+#. Plugin Name of the plugin
+msgid "ADP Test Plugin"
+msgstr ""
+
+#. Description of the plugin
+msgid "Testing Plugin Technics"
+msgstr ""
+
+#. Author of the plugin
+msgid "Andrea Di Pietro"
+msgstr ""
+
+#: includes/admin/meta-boxes-trait.php:28
+#: includes/public/screens-callables.php:136
+msgid "Apotheke info"
+msgstr ""
+
+#. translators: 1: Slug Name of plugin 2: Function Name.
+#: includes/admin/meta-boxes-trait.php:58
+msgid "%1$s, %2$s: meta box data not saved, wrong nonce."
+msgstr ""
+
+#: includes/admin/meta-boxes-trait.php:85
+msgid "List of apotheke's drugs"
+msgstr ""
+
+#: includes/admin/options-callbacks-trait.php:32
+msgid "Generic drugs and stores settings."
+msgstr ""
+
+#: includes/admin/options-callbacks-trait.php:56
+msgid "no"
+msgstr ""
+
+#: includes/admin/options-callbacks-trait.php:59
+#: includes/admin/options-callbacks-trait.php:68
+msgid "yes"
+msgstr ""
+
+#. translators: 1: Affermative choice 2: Plugin Slug.
+#: includes/admin/options-callbacks-trait.php:66
+msgid "<b>%2$s</b> will add to %1$s cpt drugs' list at the end of the content."
+msgstr ""
+
+#: includes/admin/options-page-html.php:21
+msgid "Settings Saved"
+msgstr ""
+
+#. translators: %s: Name of Plugin's Menu page Title
+#: includes/admin/options-page-trait.php:29
+msgid "%s options"
+msgstr ""
+
+#. translators: %s: Name of Plugin's Menu Title
+#: includes/admin/options-page-trait.php:34
+msgid "%s Options"
+msgstr ""
+
+#: includes/admin/options-page-trait.php:151
+msgid "Configure drug stores."
+msgstr ""
+
+#: includes/admin/options-page-trait.php:161
+msgid "Content hook active?"
+msgstr ""
+
+#: includes/admin/options-page-trait.php:178
+msgid "General contact mail"
+msgstr ""
+
+#: includes/admin/options-page-trait.php:195
+msgid "Drugs"
+msgstr ""
+
+#: includes/class-adptest.php:94
+#: includes/class-adptest.php:101
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: includes/class-adptest.php:307
+msgid "activated"
+msgstr ""
+
+#: includes/class-adptest.php:323
+msgid "deactivated"
+msgstr ""
+
+#: includes/cpts-trait.php:27
+msgid "Apotheken"
+msgstr ""
+
+#: includes/cpts-trait.php:28
+msgid "Apotheke"
+msgstr ""
+
+#: includes/public/screens-callables.php:38
+msgid "List of avaible drugs."
+msgstr ""
+
+#: includes/public/screens-callables.php:66
+msgid "Drugstores's administrator info contact."
+msgstr ""
+
+#: includes/taxonomy-trait.php:24
+msgctxt "taxonomy general name"
+msgid "Types"
+msgstr ""
+
+#: includes/taxonomy-trait.php:25
+msgctxt "taxonomy singular name"
+msgid "Type"
+msgstr ""
+
+#: includes/taxonomy-trait.php:26
+msgid "Search Types"
+msgstr ""
+
+#: includes/taxonomy-trait.php:27
+msgid "All Types"
+msgstr ""
+
+#: includes/taxonomy-trait.php:30
+msgid "Edit Type"
+msgstr ""
+
+#: includes/taxonomy-trait.php:31
+msgid "Update Type"
+msgstr ""
+
+#: includes/taxonomy-trait.php:32
+msgid "Add New Type"
+msgstr ""
+
+#: includes/taxonomy-trait.php:33
+msgid "New Type Name"
+msgstr ""
+
+#: includes/taxonomy-trait.php:34
+msgctxt "taxonomy menu name"
+msgid "Type"
+msgstr ""

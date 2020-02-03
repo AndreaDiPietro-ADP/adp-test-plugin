@@ -1,0 +1,157 @@
+# Copyright (C) 2020 Andrea Di Pietro
+# This file is distributed under the same license as the ADP Test Plugin plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: ADP Test Plugin 0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/adp-test-plugin\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-02-02T21:09:26+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: adp-test-plugin\n"
+
+#. Plugin Name of the plugin
+msgid "ADP Test Plugin"
+msgstr "ADP plugin di test"
+
+#. Description of the plugin
+msgid "Testing Plugin Technics"
+msgstr "Plugin per testare le funzionalità"
+
+#. Author of the plugin
+msgid "Andrea Di Pietro"
+msgstr "Andrea Di Pietro"
+
+#: includes/admin/meta-boxes-trait.php:28
+#: includes/public/screens-callables.php:136
+msgid "Apotheke info"
+msgstr "Informazioni farmacia"
+
+#. translators: 1: Slug Name of plugin 2: Function Name.
+#: includes/admin/meta-boxes-trait.php:58
+msgid "%1$s, %2$s: meta box data not saved, wrong nonce."
+msgstr "%1$s, %2$s: meta box non salvato, il nonce di verifica è errato."
+
+#: includes/admin/meta-boxes-trait.php:85
+msgid "List of apotheke's drugs"
+msgstr "Lista medicine della farmacia"
+
+#: includes/admin/options-callbacks-trait.php:32
+msgid "Generic drugs and stores settings."
+msgstr "Settaggi generali per farmacie e medicine"
+
+#: includes/admin/options-callbacks-trait.php:56
+msgid "no"
+msgstr "no"
+
+#: includes/admin/options-callbacks-trait.php:59
+#: includes/admin/options-callbacks-trait.php:68
+msgid "yes"
+msgstr "si"
+
+#. translators: 1: Affermative choice 2: Plugin Slug.
+#: includes/admin/options-callbacks-trait.php:66
+msgid "<b>%2$s</b> will add to %1$s cpt drugs' list at the end of the content."
+msgstr "scegliendo <b>%2$s</b> sara' inserita in coda al contenuto del cpt %1$s la lista medicine."
+
+#: includes/admin/options-page-html.php:21
+msgid "Settings Saved"
+msgstr "Settaggi salvati"
+
+#. translators: %s: Name of Plugin's Menu page Title
+#: includes/admin/options-page-trait.php:29
+msgid "%s options"
+msgstr "Opzioni %s"
+
+#. translators: %s: Name of Plugin's Menu Title
+#: includes/admin/options-page-trait.php:34
+msgid "%s Options"
+msgstr "Opzioni %s"
+
+#: includes/admin/options-page-trait.php:151
+msgid "Configure drug stores."
+msgstr "Configura farmacie"
+
+#: includes/admin/options-page-trait.php:161
+msgid "Content hook active?"
+msgstr "Attivare l'hook sul contenuto (the_content)?"
+
+#: includes/admin/options-page-trait.php:178
+msgid "General contact mail"
+msgstr "Email generica di contatto"
+
+#: includes/admin/options-page-trait.php:195
+msgid "Drugs"
+msgstr "Farmaci"
+
+#: includes/class-adptest.php:94
+#: includes/class-adptest.php:101
+msgid "Cheatin&#8217; huh?"
+msgstr "ah ah ah ci hai provato?"
+
+#: includes/class-adptest.php:307
+msgid "activated"
+msgstr "attivato"
+
+#: includes/class-adptest.php:323
+msgid "deactivated"
+msgstr "disattivato"
+
+#: includes/cpts-trait.php:27
+msgid "Apotheken"
+msgstr "Farmacie"
+
+#: includes/cpts-trait.php:28
+msgid "Apotheke"
+msgstr "Farmacia"
+
+#: includes/public/screens-callables.php:38
+msgid "List of avaible drugs."
+msgstr "Lista medicine disponibili."
+
+#: includes/public/screens-callables.php:66
+msgid "Drugstores's administrator info contact."
+msgstr "Contatto generico farmacie."
+
+#: includes/taxonomy-trait.php:24
+msgctxt "taxonomy general name"
+msgid "Types"
+msgstr "Tipologie"
+
+#: includes/taxonomy-trait.php:25
+msgctxt "taxonomy singular name"
+msgid "Type"
+msgstr "Tipologia"
+
+#: includes/taxonomy-trait.php:26
+msgid "Search Types"
+msgstr "Cerca tipologie"
+
+#: includes/taxonomy-trait.php:27
+msgid "All Types"
+msgstr "Tutte le tipologie"
+
+#: includes/taxonomy-trait.php:30
+msgid "Edit Type"
+msgstr "Modifica tipologie"
+
+#: includes/taxonomy-trait.php:31
+msgid "Update Type"
+msgstr "Aggiorna tipologie"
+
+#: includes/taxonomy-trait.php:32
+msgid "Add New Type"
+msgstr "Aggiungi una nuova tipologia"
+
+#: includes/taxonomy-trait.php:33
+msgid "New Type Name"
+msgstr "Nome nuova tipologia"
+
+#: includes/taxonomy-trait.php:34
+msgctxt "taxonomy menu name"
+msgid "Type"
+msgstr "Tipologia"

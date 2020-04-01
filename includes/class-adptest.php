@@ -41,7 +41,6 @@ if ( ! class_exists( 'ADPTest' ) ) :
 		 * This is a precautionary measure, to avoid potential errors produced by
 		 * unanticipated direct manipulation of run-time data.
 		 *
-		 * @see ADPTest::setup_globals()
 		 * @var array
 		 */
 		private $data;

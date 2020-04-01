@@ -5,7 +5,7 @@
  * and open the template in the editor.
  *
  * @package ADP_Test_Plugin
- * @subpackage ADP_Test_Plugi/includes
+ * @subpackage ADP_Test_Plugin/includes
  */
 
 // Exit if accessed directly.
@@ -19,7 +19,7 @@ require __DIR__ . '/public/screens-callables.php';
 require __DIR__ . '/cpts-trait.php';
 require __DIR__ . '/taxonomy-trait.php';
 
-if ( ! class_exists( 'ADPTest' ) && trait_exists( 'ADPTestOptionsCB' ) ) :
+if ( ! class_exists( 'ADPTest' ) ) :
 
 	/**
          * Singleton class.

@@ -5,7 +5,7 @@
  * and open the template in the editor.
  * 
  * @package ADP_Test_Plugin
- * @subpackage ADP_Test_Plugi/includes/admin
+ * @subpackage ADP_Test_Plugin/includes/admin
  */
 
 ( defined( 'WPINC' ) && current_user_can( 'manage_options' ) ) || die;

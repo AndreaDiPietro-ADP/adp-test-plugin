@@ -5,7 +5,7 @@
  * and open the template in the editor.
  *
  * @package ADP_Test_Plugin
- * @subpackage ADP_Test_Plugi/includes
+ * @subpackage ADP_Test_Plugin/includes
  */
 
 // If this file is called directly, abort.

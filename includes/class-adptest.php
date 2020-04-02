@@ -299,11 +299,7 @@ if ( ! class_exists( 'ADPTest' ) ) :
 		// ****************** Test function*************************
 		function on_activation() {
 			if ( true === WP_DEBUG ) :
-				if ( class_exists( 'ADPTest', false ) ) :
-					$plugin_mc = self::instance();
-				endif;
-
-				error_log( ( isset( $plugin_mc ) ? ( $plugin_mc->slug . ': ' ) : '' ) . __( 'activated', 'adp-test-plugin' ) );
+				error_log( $this->slug . ': '  . __( 'activated', 'adp-test-plugin' ) );
 			endif;
 
 			// trigger our function that registers the custom post type.
@@ -315,11 +311,7 @@ if ( ! class_exists( 'ADPTest' ) ) :
 
 		function on_deactivation() {
 			if ( true === WP_DEBUG ) :
-				if ( class_exists( 'ADPTest', false ) ) :
-					$plugin_mc = self::instance();
-				endif;
-
-				error_log( ( isset( $plugin_mc ) ? ( $plugin_mc->slug . ': ' ) : '' ) . __( 'deactivated', 'adp-test-plugin' ) );
+				error_log( $this->slug . ': '  . __( 'deactivated', 'adp-test-plugin' ) );
 			endif;
 
 			// unregister the post type, so the rules are no longer in memory.

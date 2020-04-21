@@ -80,6 +80,7 @@ if ( ! trait_exists( 'ADPTestOptionsSettings' ) ) :
 			$contact_mail = isset( $value[ $label_for ] ) ? $value[ $label_for ] : null;
 			if ( ! empty( $contact_mail ) ) :
 				$contact_mail = sanitize_email( $contact_mail );
+                                $value[ $label_for ] = $contact_mail;
 			endif;
 			return $value;
 		}

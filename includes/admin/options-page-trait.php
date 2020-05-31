@@ -27,13 +27,9 @@ if ( ! trait_exists( 'ADPTestOptionsSettings' ) ) :
 				sprintf(
 							/* translators: %s: Name of Plugin's Menu page Title */
 					__( '%s options', 'adp-test-plugin' ),
-					$this->slug
+					$this->plugin_name
 				),
-				sprintf(
-							/* translators: %s: Name of Plugin's Menu Title */
-					__( '%s Options', 'adp-test-plugin' ),
-					$this->slug
-				),
+				$this->plugin_name,
 				'manage_options',
 				$this->slug,
 				array( $this, 'options_page_html' )
@@ -137,14 +133,11 @@ if ( ! trait_exists( 'ADPTestOptionsSettings' ) ) :
 		 */
 		public function settings_init() {
 
-			$option_group = $this->slug;
-			$option_name  = $this->classname_lc . '_options';
-
-			add_filter( "pre_update_option_{$option_name}", array( $this, 'option_validation' ), 10, 3 );
-			add_action( "update_option_{$option_name}", array( $this, 'remove_from_post_meta_deleted_drugs' ), 10, 3 );
+			add_action( "update_option_{$this->option_name}", array( $this, 'remove_from_post_meta_deleted_drugs' ), 10, 3 );
+			add_filter( "pre_update_option_{$this->option_name}", array( $this, 'option_validation' ), 10, 3 );
 
 			// Register a new setting for Options' page ('slug').
-			register_setting( $option_group, $option_name );
+			register_setting( $this->option_group, $this->option_name );
 
 			// Register a new section in Options' page ('slug').
 			add_settings_section(
@@ -167,7 +160,7 @@ if ( ! trait_exists( 'ADPTestOptionsSettings' ) ) :
 					'label_for'                          => $setid,
 					'class'                              => $this->classname_lc . '_row',
 					$this->classname_lc . '_custom_data' => 'custom',
-					'option_name'                        => $option_name,
+					'option_name'                        => $this->option_name,
 				)
 			);
 
@@ -184,7 +177,7 @@ if ( ! trait_exists( 'ADPTestOptionsSettings' ) ) :
 					'label_for'                          => $setid,
 					'class'                              => $this->classname_lc . '_row',
 					$this->classname_lc . '_custom_data' => 'custom',
-					'option_name'                        => $option_name,
+					'option_name'                        => $this->option_name,
 				)
 			);
 
@@ -201,7 +194,7 @@ if ( ! trait_exists( 'ADPTestOptionsSettings' ) ) :
 					'label_for'                          => $setid,
 					'class'                              => $this->classname_lc . '_row',
 					$this->classname_lc . '_custom_data' => 'custom',
-					'option_name'                        => $option_name,
+					'option_name'                        => $this->option_name,
 				)
 			);
 		}

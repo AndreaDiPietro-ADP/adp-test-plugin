@@ -154,6 +154,8 @@ if ( ! class_exists( 'ADPTest' ) ) :
 		 */
 		private function setup_environment() {
 
+                        $this->plugin_name = 'ADP Test Plugin';
+                    
 			/** Paths ************************************************************ */
 			// File & base & path and URL.
 			$this->classname    = get_class( $this );
@@ -161,7 +163,8 @@ if ( ! class_exists( 'ADPTest' ) ) :
 			$this->file         = __FILE__;
 			$this->plugin_dir   = $this->trailingseparatorit( dirname( $this->file, 2 ) );
 			$this->slug         = plugin_basename( $this->plugin_dir );
-			$this->hookprefix   = str_replace( '-', '_', $this->slug );
+                        $this->slug_lc      = str_replace( '-', '_', sanitize_key($this->slug));
+			$this->hookprefix   = apply_filters( str_replace( '-', '_', $this->classname_lc ) . '_hookprefix', str_replace( '-', '_', $this->slug ) );
 			$this->basefile     = $this->plugin_dir . $this->slug . '.php';
 			$this->basename     = plugin_basename( $this->basefile );
 
@@ -174,6 +177,10 @@ if ( ! class_exists( 'ADPTest' ) ) :
 			// Languages.
 			$this->lang_dir = $this->trailingseparatorit( dirname( $this->basename ) . DIRECTORY_SEPARATOR . 'languages' );
 
+                        //options -----------------
+                        $this->option_group  = apply_filters( $this->hookprefix . '_option_group', $this->slug );
+                        $this->option_name   = apply_filters( $this->hookprefix . '_option_name', $this->classname_lc . '_options' );
+                        
 			// cpt.
 			$this->cpt_key  = "{$this->classname_lc}_apotheken";
 			$this->cpt_slug = apply_filters( $this->hookprefix . '_cpt_slug', 'apotheken' ); // duplicate slug problem can be solved slug with the filter

@@ -49,8 +49,8 @@ if ( ! trait_exists( 'ADPTestOptionsCB' ) ) :
 			// output the field.
 			?>
 			<select id="<?php echo esc_attr( $args['label_for'] ); ?>"
-					data-custom="<?php echo esc_attr( $args[ $this->classname_lc . '_custom_data' ] ); ?>"
-										name="<?php esc_attr_e( $this->classname_lc ); ?>_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
+					data-custom="<?php echo esc_attr( $args[ $this->slug_lc . '_custom_data' ] ); ?>"
+										name="<?php esc_attr_e( $this->slug_lc ); ?>_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
 					>
 				<option value="no" <?php echo isset( $options[ $args['label_for'] ] ) ? ( selected( $options[ $args['label_for'] ], 'no', false ) ) : ( '' ); ?>>
 					<?php esc_html_e( 'no', 'adp-test-plugin' ); ?>
@@ -83,8 +83,8 @@ if ( ! trait_exists( 'ADPTestOptionsCB' ) ) :
 			?>
 				<input id="<?php echo esc_attr( $args['label_for'] ); ?>"
                                         type="email"
-                                        data-custom="<?php echo esc_attr( $args[ $this->classname_lc . '_custom_data' ] ); ?>"
-                                        name="<?php echo $this->classname_lc; ?>_options[<?php echo esc_attr( $args['label_for'] ); ?>]" 
+                                        data-custom="<?php echo esc_attr( $args[ $this->slug_lc . '_custom_data' ] ); ?>"
+                                        name="<?php echo $this->slug_lc; ?>_options[<?php echo esc_attr( $args['label_for'] ); ?>]" 
                                         value="<?php echo isset( $options[ $args['label_for'] ] ) ? sanitize_email( $options[ $args['label_for'] ] ) : ( '' ); ?>"
 				/>
 			<?php
@@ -106,8 +106,8 @@ if ( ! trait_exists( 'ADPTestOptionsCB' ) ) :
 						$count++;
 						$id_input     = esc_attr( $args['label_for'] ) . '_' . $count;
 						$id_container = 'container_' . $id_input;
-						$data_cutom   = esc_attr( $args[ $this->classname_lc . '_custom_data' ] );
-						$name         = $this->classname_lc . '_options[' . esc_attr( $args['label_for'] ) . '][]';
+						$data_cutom   = esc_attr( $args[ $this->slug_lc . '_custom_data' ] );
+						$name         = $this->slug_lc . '_options[' . esc_attr( $args['label_for'] ) . '][]';
 						printf(
                                                         $this->drug_field(),
                                                         // id input.
@@ -121,13 +121,13 @@ if ( ! trait_exists( 'ADPTestOptionsCB' ) ) :
                                                         // id container (div).
                                                         $id_container,
                                                         // javascript class prefix name, see options_page_javascript.php.
-                                                        $this->classname_lc
+                                                        $this->slug_lc
 						);
 					}
 				}
 			}
 			?>
-				<a href="#" onclick="<?php echo $this->classname_lc; ?>DrugsOptions().addElement(this); return false;">[+]</a>
+				<a href="#" onclick="<?php echo $this->slug_lc; ?>DrugsOptions().addElement(this); return false;">[+]</a>
 			<?php
 		}
 

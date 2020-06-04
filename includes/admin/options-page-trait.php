@@ -57,7 +57,7 @@ if ( ! trait_exists( 'ADPTestOptionsSettings' ) ) :
 		 */
 		public function option_validation( $value, $old_value, $option ) {
 			// Remove empty element from drugs' list.
-			$label_for = "{$this->classname_lc}_field_list_drugs";
+			$label_for = "{$this->slug_lc}_field_list_drugs";
 			$drug_list = isset( $value[ $label_for ] ) ? $value[ $label_for ] : null;
 			if ( ! empty( $drug_list ) ) :
 				// Remove empty elements.
@@ -72,7 +72,7 @@ if ( ! trait_exists( 'ADPTestOptionsSettings' ) ) :
 			endif;
 
 			// Sanitize contact mail.
-			$label_for    = "{$this->classname_lc}_field_contact_mail";
+			$label_for    = "{$this->slug_lc}_field_contact_mail";
 			$contact_mail = isset( $value[ $label_for ] ) ? $value[ $label_for ] : null;
 			if ( ! empty( $contact_mail ) ) :
 				$contact_mail = sanitize_email( $contact_mail );
@@ -86,7 +86,7 @@ if ( ! trait_exists( 'ADPTestOptionsSettings' ) ) :
 		 */
 		public function remove_from_post_meta_deleted_drugs( $old_value, $value, $option ) {
 
-			$label_for     = "{$this->classname_lc}_field_list_drugs";
+			$label_for     = "{$this->slug_lc}_field_list_drugs";
 			$old_drug_list = isset( $old_value[ $label_for ] ) ? $old_value[ $label_for ] : null;
 			$drug_list     = isset( $value[ $label_for ] ) ? $value[ $label_for ] : null;
 
@@ -119,7 +119,7 @@ if ( ! trait_exists( 'ADPTestOptionsSettings' ) ) :
 						$ps_placeholders .= ',%s';
 					endfor;
 					$ps_placeholders = substr( $ps_placeholders, 1 );
-					$query           = $wpdb->prepare( "delete from {$wpdb->postmeta} where meta_key = '_{$this->classname_lc}_avaible_drugs' and meta_value in (" . $ps_placeholders . ') ', $to_del );
+					$query           = $wpdb->prepare( "delete from {$wpdb->postmeta} where meta_key = '_{$this->slug_lc}_avaible_drugs' and meta_value in (" . $ps_placeholders . ') ', $to_del );
 					$result          = $wpdb->query( $query );
 					if ( true === WP_DEBUG && false === $result && ! empty( $wpdb->last_error ) ) :
 						error_log( $wpdb->last_error );
@@ -141,59 +141,59 @@ if ( ! trait_exists( 'ADPTestOptionsSettings' ) ) :
 
 			// Register a new section in Options' page ('slug').
 			add_settings_section(
-				$this->classname_lc . '_section_developers',
+				$this->slug_lc . '_section_developers',
 				__( 'Configure drug stores.', 'adp-test-plugin' ),
 				array( $this, 'section_developers_cb' ),
 				$this->slug
 			);
 
 			// Register a new field in the section, inside the Options' page ('slug').
-			$setid = "{$this->classname_lc}_field_content_hook";
+			$setid = "{$this->slug_lc}_field_content_hook";
 			add_settings_field(
 				$setid, // As of WP 4.6 this value is used only internally.
 				// Use $args' label_for to populate the id inside the callback.
 					__( 'Content hook active?', 'adp-test-plugin' ),
 				array( $this, 'field_content_hook_cb' ),
 				$this->slug,
-				$this->classname_lc . '_section_developers',
+				$this->slug_lc . '_section_developers',
 				array(
 					'label_for'                          => $setid,
-					'class'                              => $this->classname_lc . '_row',
-					$this->classname_lc . '_custom_data' => 'custom',
+					'class'                              => $this->slug_lc . '_row',
+					$this->slug_lc . '_custom_data' => 'custom',
 					'option_name'                        => $this->option_name,
 				)
 			);
 
 			// Register a new field in the section, inside the Options' page ('slug').
-			$setid = "{$this->classname_lc}_field_contact_mail";
+			$setid = "{$this->slug_lc}_field_contact_mail";
 			add_settings_field(
 				$setid, // As of WP 4.6 this value is used only internally.
 				// Use $args' label_for to populate the id inside the callback.
 					__( 'General contact mail', 'adp-test-plugin' ),
 				array( $this, 'field_contact_mail_cb' ),
 				$this->slug,
-				$this->classname_lc . '_section_developers',
+				$this->slug_lc . '_section_developers',
 				array(
 					'label_for'                          => $setid,
-					'class'                              => $this->classname_lc . '_row',
-					$this->classname_lc . '_custom_data' => 'custom',
+					'class'                              => $this->slug_lc . '_row',
+					$this->slug_lc . '_custom_data' => 'custom',
 					'option_name'                        => $this->option_name,
 				)
 			);
 
 			// Register a new field in the section, inside the Options' page ('slug').
-			$setid = "{$this->classname_lc}_field_list_drugs";
+			$setid = "{$this->slug_lc}_field_list_drugs";
 			add_settings_field(
 				$setid, // As of WP 4.6 this value is used only internally.
 				// Use $args' label_for to populate the id inside the callback.
 					__( 'Drugs', 'adp-test-plugin' ),
 				array( $this, 'field_list_drugs_cb' ),
 				$this->slug,
-				$this->classname_lc . '_section_developers',
+				$this->slug_lc . '_section_developers',
 				array(
 					'label_for'                          => $setid,
-					'class'                              => $this->classname_lc . '_row',
-					$this->classname_lc . '_custom_data' => 'custom',
+					'class'                              => $this->slug_lc . '_row',
+					$this->slug_lc . '_custom_data' => 'custom',
 					'option_name'                        => $this->option_name,
 				)
 			);

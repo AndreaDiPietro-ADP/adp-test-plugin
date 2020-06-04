@@ -21,12 +21,12 @@ if ( ! trait_exists( 'ADPTestMetaBox' ) ) :
 		/**
 		 * Add the meta box
 		 */
-		public function add_meta_box() {
+		public function on_add_meta_boxes() {
 			$screen = $this->cpt_key;
 			add_meta_box(
 				"{$this->slug_lc}_box_id", // Unique ID.
 				__( 'Apotheke info', 'adp-test-plugin' ), // Box title.
-				array( $this, 'html_meta_box' ), // Content callback, must be of type callable.
+				array( $this, 'html_meta_boxes' ), // Content callback, must be of type callable.
 				$screen, // Post type.
 				'side'                    // context.
 			);
@@ -69,7 +69,7 @@ if ( ! trait_exists( 'ADPTestMetaBox' ) ) :
 		 *
 		 * @param WP_Post $post object post.
 		 */
-		public function html_meta_box( $post ) {
+		public function html_meta_boxes( $post ) {
 			$meta_key   = "_{$this->slug_lc}_avaible_drugs";
 			$values     = get_post_meta( $post->ID, $meta_key, false );
 			$nonce_name = "{$this->slug_lc}_box_nonce";

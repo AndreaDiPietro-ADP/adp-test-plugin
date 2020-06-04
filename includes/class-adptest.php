@@ -179,14 +179,14 @@ if ( ! class_exists( 'ADPTest' ) ) :
 
                         //options -----------------
                         $this->option_group  = apply_filters( $this->hookprefix . '_option_group', $this->slug );
-                        $this->option_name   = apply_filters( $this->hookprefix . '_option_name', $this->classname_lc . '_options' );
+                        $this->option_name   = apply_filters( $this->hookprefix . '_option_name', $this->slug_lc . '_options' );
                         
 			// cpt.
-			$this->cpt_key  = "{$this->classname_lc}_apotheken";
+			$this->cpt_key  = "adp_apotheken";
 			$this->cpt_slug = apply_filters( $this->hookprefix . '_cpt_slug', 'apotheken' ); // duplicate slug problem can be solved slug with the filter
 
 			// taxonomies.
-			$this->tax_key = "{$this->classname_lc}_apotheken_types";
+			$this->tax_key = "{$this->slug_lc}_apotheken_types";
 		}
 
 		/**
@@ -235,7 +235,7 @@ if ( ! class_exists( 'ADPTest' ) ) :
 				add_action( 'admin_init', array( $this, 'settings_init' ) );
 
 				// register meta box.
-				add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
+				add_action( 'add_meta_boxes', array( $this, 'on_add_meta_boxes' ) );
 
 				// register save of meta box.
 				add_action( 'save_post', array( $this, 'save_meta_box' ) );
@@ -251,8 +251,8 @@ if ( ! class_exists( 'ADPTest' ) ) :
 			add_action( 'init', array( $this, 'shortcode_init' ) );
 
 			// check whether or not to use the_content hook to render apotheke drug list.
-			$option_name                 = "{$this->classname_lc}_options";
-			$label_for_activation_hook   = "{$this->classname_lc}_field_content_hook";
+			$option_name                 = "{$this->slug_lc}_options";
+			$label_for_activation_hook   = "{$this->slug_lc}_field_content_hook";
 			$options                     = get_option( $option_name );
 			$activation_hook_the_content = isset( $options[ $label_for_activation_hook ] ) ? ( 'yes' === $options[ $label_for_activation_hook ] ) : false;
 			if ( $activation_hook_the_content ) :

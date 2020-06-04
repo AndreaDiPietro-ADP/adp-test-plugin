@@ -20,7 +20,7 @@ if ( ! trait_exists( 'ADPTestPublicSceensCallables' ) ) :
 		 * @return array
 		 */
 		private function get_drug_list( $apotheke_id ) {
-			$meta_key  = "_{$this->classname_lc}_avaible_drugs";
+			$meta_key  = "_{$this->slug_lc}_avaible_drugs";
 			$drug_list = get_post_meta( $apotheke_id, $meta_key, false );
 
 			return $drug_list;
@@ -34,9 +34,9 @@ if ( ! trait_exists( 'ADPTestPublicSceensCallables' ) ) :
 		private function get_drug_list_html( $drug_list ) {
 			$content = '';
 			if ( ! empty( $drug_list ) && is_array( $drug_list ) ) :
-				$class    = sanitize_html_class( $this->classname_lc . '_title_list_drugs' );
+				$class    = sanitize_html_class( $this->slug_lc . '_title_list_drugs' );
 				$content .= "<label class=\"{$class}\">" . __( 'List of avaible drugs.', 'adp-test-plugin' ) . '</label>';
-				$class    = sanitize_html_class( $this->classname_lc . '_list_drugs' );
+				$class    = sanitize_html_class( $this->slug_lc . '_list_drugs' );
 				$content .= "<ul class=\"{$class}\">";
 				foreach ( $drug_list as $drug ) :
 					$drug     = esc_html( $drug );
@@ -63,7 +63,7 @@ if ( ! trait_exists( 'ADPTestPublicSceensCallables' ) ) :
 					$contact_mail = $this->contact_info();
 					if ( ! empty( $contact_mail ) ) :
 						$contact_mail = sanitize_email( $contact_mail );
-						$content     .= "<div class=\"{$this->classname_lc}\"><a href=\"mailto:{$contact_mail}\">" . esc_html__( 'Drugstores\'s administrator info contact.', 'adp-test-plugin' ) . '</a></div>';
+						$content     .= "<div class=\"{$this->slug_lc}\"><a href=\"mailto:{$contact_mail}\">" . esc_html__( 'Drugstores\'s administrator info contact.', 'adp-test-plugin' ) . '</a></div>';
 					endif;
 				endif;
 			endif;
@@ -75,8 +75,8 @@ if ( ! trait_exists( 'ADPTestPublicSceensCallables' ) ) :
 		 * @return string .
 		 */
 		private function contact_info() {
-			$option_name  = "{$this->classname_lc}_options";
-			$label_for    = "{$this->classname_lc}_field_contact_mail";
+			$option_name  = "{$this->slug_lc}_options";
+			$label_for    = "{$this->slug_lc}_field_contact_mail";
 			$options      = get_option( $option_name );
 			$contact_mail = ( false !== $options && isset( $options[ $label_for ] ) ) ? sanitize_email( $options[ $label_for ] ) : null;
 			return $contact_mail;
@@ -99,7 +99,7 @@ if ( ! trait_exists( 'ADPTestPublicSceensCallables' ) ) :
 					endforeach;
 					if ( ! empty( $t_list ) ) :
 						$t_list  = substr( $t_list, 1 );
-						$class   = sanitize_html_class( $this->classname_lc . '_apotheke_types' );
+						$class   = sanitize_html_class( $this->slug_lc . '_apotheke_types' );
 						$content = "<div class=\"{$class}\">{$t_list}</div>" . $content;
 					endif;
 				endif;
@@ -109,6 +109,8 @@ if ( ! trait_exists( 'ADPTestPublicSceensCallables' ) ) :
 
 		/**
 		 *
+                 * es: [adp-test-plugin-apotheke-info id="199"]
+                 * 
 		 * @param array  $atts .
 		 * @param string $content .
 		 * @param string $tag .
@@ -140,7 +142,7 @@ if ( ! trait_exists( 'ADPTestPublicSceensCallables' ) ) :
 				);
 
 				// start box.
-				$o .= "<div class=\"{$this->classname_lc}-apotheke-info-box\">";
+				$o .= "<div class=\"{$this->slug}-apotheke-info-box\">";
 
 				// title.
 				$o .= '<h2>' . esc_html( $shcd_atts['title'] ) . '</h2>';
@@ -165,7 +167,7 @@ if ( ! trait_exists( 'ADPTestPublicSceensCallables' ) ) :
 
 					$modified_content = do_shortcode( $modified_content );
 
-					$o .= "<div class\"{$this->classname_lc}-shortcode-content\">{$modified_content}</div>";
+					$o .= "<div class\"{$this->slug}-shortcode-content\">{$modified_content}</div>";
 				}
 
 				// apotheke drug list.
@@ -183,7 +185,7 @@ if ( ! trait_exists( 'ADPTestPublicSceensCallables' ) ) :
 		 * .
 		 */
 		public function shortcode_init() {
-			add_shortcode( "{$this->classname_lc}-apotheke-info", array( $this, 'shortcode' ) );
+			add_shortcode( "{$this->slug}-apotheke-info", array( $this, 'shortcode' ) );
 		}
 
 	}

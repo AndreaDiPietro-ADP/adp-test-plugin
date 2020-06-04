@@ -18,11 +18,11 @@
 // WordPress will add the "settings-updated" $_GET parameter to the url.
 if ( isset( $_GET['settings-updated'] ) ) {
 	// add settings saved message with the class of "updated".
-	add_settings_error( $this->classname_lc . '_messages', $this->classname_lc . '_message', __( 'Settings Saved', 'adp-test-plugin' ), 'updated' );
+	add_settings_error( $this->slug_lc . '_messages', $this->slug_lc . '_message', __( 'Settings Saved', 'adp-test-plugin' ), 'updated' );
 }
 
 // show error/update messages.
-settings_errors( $this->classname_lc . '_messages' );
+settings_errors( $this->slug_lc . '_messages' );
 ?>
 <div class="wrap">
 	<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>

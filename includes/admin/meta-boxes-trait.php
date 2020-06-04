@@ -21,7 +21,7 @@ if ( ! trait_exists( 'ADPTestMetaBox' ) ) :
 		/**
 		 * Add the meta box
 		 */
-		public static function add_meta_box() {
+		public function add_meta_box() {
 			$screen = $this->cpt_key;
 			add_meta_box(
 				"{$this->slug_lc}_box_id", // Unique ID.
@@ -38,7 +38,7 @@ if ( ! trait_exists( 'ADPTestMetaBox' ) ) :
 		 *
 		 * @param int $post_id the post id.
 		 */
-		public static function save_meta_box( $post_id ) {
+		public function save_meta_box( $post_id ) {
 			$label_for  = "{$this->slug_lc }_field_list_drugs";
 			$meta_key   = "_{$this->slug_lc}_avaible_drugs";
 			$nonce_name = "{$this->slug_lc}_box_nonce";
@@ -69,7 +69,7 @@ if ( ! trait_exists( 'ADPTestMetaBox' ) ) :
 		 *
 		 * @param WP_Post $post object post.
 		 */
-		public static function html_meta_box( $post ) {
+		public function html_meta_box( $post ) {
 			$meta_key   = "_{$this->slug_lc}_avaible_drugs";
 			$values     = get_post_meta( $post->ID, $meta_key, false );
 			$nonce_name = "{$this->slug_lc}_box_nonce";
